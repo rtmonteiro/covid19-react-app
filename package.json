@@ -1,0 +1,22 @@
+{
+  "name": "corona-virus-react-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "next"
+  },
+  "keywords": [
+    "corona-virus",
+    "react",
+    "api"
+  ],
+  "author": "Ryan Monteiro",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.3.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "styled-components": "^5.0.1"
+  }
+}
