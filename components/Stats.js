@@ -5,9 +5,16 @@ const StatGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+  @media (max-width: 748px) {
+    justify-content: center;
+    grid-template-columns: 50%;
+    grid-template-rows: repeat(3, 1fr);
+  }
 `;
+
 const StatBlock = styled.div`
-  background: #f2f2f2;
+  background: teal;
+  color: white;
   font-size: 1.2rem;
   padding: 1rem;
   border-radius: 10px;
@@ -15,11 +22,15 @@ const StatBlock = styled.div`
   align-items: center;
   justify-items: center;
   text-align: center;
+  transition: background 0.2s;
+  &:hover {
+    background: #00646a;
+  }
 `;
 
 export default function Stats({ url }) {
   const { stats, loading, error } = useStats(url);
-  console.log(stats, loading, error);
+  // console.log(stats, loading, error);
   if (loading) return <p>Loading...</p>;
   if (stats.error) {
     return (
