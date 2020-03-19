@@ -28,7 +28,7 @@ export default function CountrySelector() {
 
   return (
     <CountrySelected>
-      <h2>Currently Showing:</h2>
+      <h3>Currently Showing:</h3>
       <h2> {countriesObj[selectedCountry].name} {countryFlagEmoji.get(countriesObj[selectedCountry].code).emoji}</h2>
       <select
         onChange={e => {

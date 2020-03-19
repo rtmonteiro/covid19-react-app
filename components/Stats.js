@@ -5,9 +5,9 @@ const StatGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  @media (max-width: 748px) {
+  @media screen and (max-width: 748px) {
     justify-content: center;
-    grid-template-columns: 50%;
+    grid-template-columns: 60%;
     grid-template-rows: repeat(3, 1fr);
   }
 `;
