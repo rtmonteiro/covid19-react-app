@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "next",
-    "build": "next build"
+    "start": "next start",
+    "build": "next build",
+    "dev": "next"
   },
   "keywords": [
     "corona-virus",
@@ -15,8 +16,9 @@
   "author": "Ryan Monteiro",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
     "country-flag-emoji": "^1.0.3",
-    "next": "^9.3.2",
+    "next": "^9.4.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "styled-components": "^5.0.1"
