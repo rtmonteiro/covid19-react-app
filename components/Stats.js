@@ -29,11 +29,32 @@ const StatBlock = styled.div`
   }
 `;
 
-export default function Stats({ url }) {
-  const { stats, loading, error } = useStats(url);
+export default function Stats({ url, local }) {
+  let { stats, loading, error } = useStats(url);
   // console.log(stats, loading, error);
   if (loading) return <p>Loading...</p>;
-  if (stats.error) {
+
+  if (local === 'Global') {
+    stats = stats.Global;
+    return (
+      <StatGrid>
+        <StatBlock>
+          <h3>Confirmed:</h3>
+          <span>{stats.TotalConfirmed}</span>
+        </StatBlock>
+        <StatBlock>
+          <h3>Deaths:</h3>
+          <span>{stats.TotalDeaths}</span>
+        </StatBlock>
+        <StatBlock>
+          <h3>Recovered:</h3>
+          <span>{stats.TotalRecovered}</span>
+        </StatBlock>
+      </StatGrid>
+    );
+  }
+
+  if (stats.length === 0 ) {
     return (
       <>
         <p>Sorry, that country is not yet in our database</p>
@@ -41,19 +62,20 @@ export default function Stats({ url }) {
       </>
     )
   }
+  stats = stats[stats.length - 1];
   return (
     <StatGrid>
       <StatBlock>
         <h3>Confirmed:</h3>
-        <span>{stats.confirmed.value}</span>
+        <span>{stats.Confirmed}</span>
       </StatBlock>
       <StatBlock>
         <h3>Deaths:</h3>
-        <span>{stats.deaths.value}</span>
+        <span>{stats.Deaths}</span>
       </StatBlock>
       <StatBlock>
         <h3>Recovered:</h3>
-        <span>{stats.recovered.value}</span>
+        <span>{stats.Recovered}</span>
       </StatBlock>
     </StatGrid>
   );
