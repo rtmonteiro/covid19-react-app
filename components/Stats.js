@@ -23,6 +23,7 @@ const StatBlock = styled.div`
   justify-items: center;
   text-align: center;
   transition: background 0.2s;
+  cursor: default;
   &:hover {
     background: #00646a;
   }

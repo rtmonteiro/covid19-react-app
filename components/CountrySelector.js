@@ -21,7 +21,7 @@ const CountrySelected = styled.div`
 `;
 
 export default function CountrySelector() {
-  const { stats: countries, loading, error } = useStats('https://covid19.mathdro.id/api/countries');
+  const { stats, loading, error } = useStats('https://covid19.mathdro.id/api/countries');
   const [selectedCountry, setSelectedCountry] = useState('BRA');
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
@@ -35,17 +35,22 @@ export default function CountrySelector() {
           setSelectedCountry(e.target.value);
         }}
       >
-        {Object.entries(countries.countries).map(([country, code]) => {
-          return (
-            <option
-              selected={selectedCountry === countries.iso3[code]}
-              key={country}
-              value={countries.iso3[code]}
-            >
-              {country}
-            </option>
-          );
-        })}
+        {stats.countries.forEach(country => {
+          // if (country.iso3 == undefined) {
+          //   return;
+          // } else {
+          //   return (
+          //     <option
+          //       selected={selectedCountry === country.iso3[code]}
+          //       key={country}
+          //       value={country.iso3[code]}
+          //     >
+          //       {country}
+          //     </option>
+          //   );
+          // }
+        }
+        )}
       </select>
       <Stats url={`https://covid19.mathdro.id/api/countries/${selectedCountry}`}></Stats>
     </CountrySelected>

@@ -76,7 +76,7 @@ export default function IndexPage() {
           <br />
           <CountrySelector></CountrySelector>
           <Footer>
-            Made with ❣️ by <a href="https://github.com/rtmonteiro">Ryan Monteiro</a>
+            Made with ❤ by <a href="https://github.com/rtmonteiro/covid19-react-app">Ryan Monteiro</a>
           </Footer>
         </CovidApp>
       </Container>

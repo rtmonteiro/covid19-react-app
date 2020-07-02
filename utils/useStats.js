@@ -6,7 +6,7 @@ export default function useStats(url) {
   const [error, setError] = useState();
   useEffect(() => {
     console.log('Mounting or updating');
-    async function fetchData() {
+    (async function fetchData() {
       setLoading(true);
       setError();
       console.log('Fetching Data');
@@ -17,8 +17,8 @@ export default function useStats(url) {
         });
       setStats(data);
       setLoading(false);
-    };
-    fetchData();
+    })();
+    // fetchData();
   }, [url]);
   return {
     stats,
