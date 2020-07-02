@@ -58,6 +58,7 @@ export default function IndexPage() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="COVID-19 Dashboard with numbers of confirmed, recovered and death cases related with the virus around the world"/>
         <title>Covid-19 React App</title>
       </Head>
       <GlobalStyle />
