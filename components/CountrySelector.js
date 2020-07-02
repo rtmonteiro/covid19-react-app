@@ -8,6 +8,9 @@ import useStats from "../utils/useStats";
 
 
 const CountrySelected = styled.div`
+  label {
+    display: block;
+  }
   select {
     margin-bottom: 10px;
     font-size: 1.2rem;
@@ -44,7 +47,9 @@ export default function CountrySelector() {
     <CountrySelected>
       <h3>Currently Showing:</h3>
       <h2> {selectedCountry.Country} {titleText}</h2>
+      <label htmlFor="countrySelector">Select a country: </label>
       <select
+        id="countrySelector"
         onChange={handleChange}
         value={selectedCountry.ISO2}
       >
@@ -53,14 +58,15 @@ export default function CountrySelector() {
 
           return (
             <option
-              key={index}
-              value={item.ISO2}
+            key={index}
+            value={item.ISO2}
             >
               {item.Country}
             </option>
           );
         })}
       </select>
+      
       <Stats url={`https://api.covid19api.com/live/country/${selectedCountry.Slug}`} local={selectedCountry.Country}></Stats>
     </CountrySelected>
   );
